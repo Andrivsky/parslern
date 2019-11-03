@@ -12,28 +12,25 @@ def get_data_from_html(html):
     first_ad = soup.find('div',class_='snippet-card__content')
     try:
         title = first_ad.find('span', class_='snippet-card__header-text').text
-        print(title)
     except:
         title = '-'
-        print(title)
+    return title
     try:
         price = soup.find('div', class_='snippet-card__info').find('div',class_ = 'price').text
-        print(price)
     except:
         price = '-'
-        print(price)
+    return price
     try:
         product_url = soup.find('a', class_='snippet-card__header-link').get('href').strip('//')
-        print(product_url)
     except:
         product_url = '-'
-        print(product_url)
+    return product_url
 
 
-def result(link,region):
+def result(link=str,region=str):
     if link.startswith('https://market.yandex.ru'):
         url =link +'&how=aprice'+'&contentRegion=' + region
         answer = str(get_data_from_html(get_html(url)))
     else:
-        answer = 'Ссылка указана не верно'
+        answer = 'Не правильная ссылка'
     return answer
