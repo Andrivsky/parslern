@@ -1,5 +1,5 @@
-# import requests
-# from bs4 import BeautifulSoup
+import requests
+from bs4 import BeautifulSoup
 
 
 def get_html(url):
@@ -31,18 +31,9 @@ def get_data_from_html(html):
 
 
 def result(link,region):
-    #print('Укажите ссылку на товар с я.маркета')
-    #link = input()
     if link.startswith('https://market.yandex.ru'):
-        #print('Выберете регион') #231 - питер 2 - москва
-        #region = input(str())
-        #https://market.yandex.ru/product--smartfon-samsung-galaxy-a20/415763024/offers?local-offers-first=0
         url =link +'&how=aprice'+'&contentRegion=' + region
         answer = get_data_from_html(get_html(url))
     else:
         answer = 'Ссылка указана не верно'
-        #https://market.yandex.ru/product--smartfon-samsung-galaxy-a20/415763024/offers?local-offers-first=0
     return answer
-#result('https://market.yandex.ru/product--smartfon-samsung-galaxy-a20/415763024/offers?local-offers-first=0','2')
-#if __name__ == '__main__':
-#    result(link='https://market.yandex.ru/product--smartfon-samsung-galaxy-a20/415763024/offers?local-offers-first=0',region='2')
