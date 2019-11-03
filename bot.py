@@ -1,7 +1,7 @@
 import requests
 import misc
 import json
-from misc import result
+from parser import result
 import time
 
 token = misc.token
