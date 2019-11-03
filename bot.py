@@ -42,7 +42,7 @@ def main():
         b = get_message()['text']
         print(b)
         time.sleep(5)
-        send_message(chat_id,result(link=a,region='2'))
+        send_message(chat_id,result(link=a,region='b'))
     else:
         send_message(chat_id, 'Чтобы начать работу бота введите команду "\pars"')
 
