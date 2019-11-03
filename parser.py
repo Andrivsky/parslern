@@ -33,7 +33,7 @@ def get_data_from_html(html):
 def result(link,region):
     if link.startswith('https://market.yandex.ru'):
         url =link +'&how=aprice'+'&contentRegion=' + region
-        answer = get_data_from_html(get_html(url))
+        answer = str(get_data_from_html(get_html(url)))
     else:
         answer = 'Ссылка указана не верно'
     return answer
